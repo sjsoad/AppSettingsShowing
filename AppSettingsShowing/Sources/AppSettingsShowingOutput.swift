@@ -11,8 +11,7 @@ import Foundation
 import AlertActionBuilder
 import SKAlertControllerShowing
 
-
-public protocol AppSettingsShowingOutput {
+public protocol AppSettingsShowing {
 
     var appSettingsShowingInterface: AppSettingsShowingInterface? { get }
     
@@ -25,7 +24,7 @@ public protocol AppSettingsShowingOutput {
     
 }
 
-extension AppSettingsShowingOutput where Self: NSObject {
+extension AppSettingsShowing where Self: NSObject {
 
     public func showAppSettingsAlert(alertPresentingCompletion: (() -> Void)? = nil, appSettingsShowingCompletion: ((Bool) -> Void)? = nil) {
         let settingsActionConfig = AlertActionConfig(title: settingsActionTitle,

@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import SKAlertControllerShowing
 
-public protocol AppSettingsShowingInterface: AlertControllerShowing {
+public protocol AppSettingsShowingInterface: AlertControllerShowingInterface {
 
     func showAppSettings(completion: ((Bool) -> Void)?)
     
