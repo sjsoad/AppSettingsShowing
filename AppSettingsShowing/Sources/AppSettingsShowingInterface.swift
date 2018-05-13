@@ -16,9 +16,9 @@ public protocol AppSettingsShowingInterface: AlertControllerShowingInterface {
     
 }
 
-extension AppSettingsShowingInterface {
+public extension AppSettingsShowingInterface {
 
-    public func showAppSettings(completion: ((Bool) -> Void)? = nil) {
+    func showAppSettings(completion: ((Bool) -> Void)? = nil) {
         guard let settingsAppURL = URL(string: UIApplicationOpenSettingsURLString), UIApplication.shared.canOpenURL(settingsAppURL) else { return }
         UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: completion)
     }

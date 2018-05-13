@@ -24,9 +24,9 @@ public protocol AppSettingsShowing {
     
 }
 
-extension AppSettingsShowing where Self: NSObject {
+public extension AppSettingsShowing where Self: NSObject {
 
-    public func showAppSettingsAlert(alertPresentingCompletion: (() -> Void)? = nil, appSettingsShowingCompletion: ((Bool) -> Void)? = nil) {
+    func showAppSettingsAlert(alertPresentingCompletion: (() -> Void)? = nil, appSettingsShowingCompletion: ((Bool) -> Void)? = nil) {
         let settingsActionConfig = AlertActionConfig(title: settingsActionTitle,
                                                      style: .default) { [weak self] (_) in
             self?.appSettingsShowingInterface?.showAppSettings(completion: appSettingsShowingCompletion)
