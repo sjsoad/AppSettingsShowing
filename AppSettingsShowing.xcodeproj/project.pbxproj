@@ -8,14 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		A5799B4F2094446400C0EE61 /* AppSettingsShowing.h in Headers */ = {isa = PBXBuildFile; fileRef = A5799B4D2094446400C0EE61 /* AppSettingsShowing.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A5799B5A209444B600C0EE61 /* AppSettingsShowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5799B59209444B600C0EE61 /* AppSettingsShowing.swift */; };
+		A595D21220C02C7800330556 /* AppSettingsShowingOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595D21020C02C7800330556 /* AppSettingsShowingOutput.swift */; };
+		A595D21320C02C7800330556 /* AppSettingsShowingInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595D21120C02C7800330556 /* AppSettingsShowingInterface.swift */; };
+		A595D21520C02C8900330556 /* AppSettingsAlertStringsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595D21420C02C8900330556 /* AppSettingsAlertStringsProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A5799B4A2094446400C0EE61 /* AppSettingsShowing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppSettingsShowing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5799B4D2094446400C0EE61 /* AppSettingsShowing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppSettingsShowing.h; sourceTree = "<group>"; };
 		A5799B562094449100C0EE61 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5799B59209444B600C0EE61 /* AppSettingsShowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsShowing.swift; sourceTree = "<group>"; };
+		A595D21020C02C7800330556 /* AppSettingsShowingOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsShowingOutput.swift; sourceTree = "<group>"; };
+		A595D21120C02C7800330556 /* AppSettingsShowingInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsShowingInterface.swift; sourceTree = "<group>"; };
+		A595D21420C02C8900330556 /* AppSettingsAlertStringsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsAlertStringsProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,9 @@
 		A5799B572094449100C0EE61 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				A5799B59209444B600C0EE61 /* AppSettingsShowing.swift */,
+				A595D21120C02C7800330556 /* AppSettingsShowingInterface.swift */,
+				A595D21020C02C7800330556 /* AppSettingsShowingOutput.swift */,
+				A595D21420C02C8900330556 /* AppSettingsAlertStringsProvider.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -150,7 +156,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5799B5A209444B600C0EE61 /* AppSettingsShowing.swift in Sources */,
+				A595D21220C02C7800330556 /* AppSettingsShowingOutput.swift in Sources */,
+				A595D21520C02C8900330556 /* AppSettingsAlertStringsProvider.swift in Sources */,
+				A595D21320C02C7800330556 /* AppSettingsShowingInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

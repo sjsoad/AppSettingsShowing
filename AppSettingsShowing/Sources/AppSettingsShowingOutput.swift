@@ -11,30 +11,6 @@ import Foundation
 import AlertActionBuilder
 import SKAlertControllerShowing
 
-public protocol AppSettingsAlertStringsProviding {
-    
-    var settingsAlertTitle: String? { get }
-    var settingsAlertMessage: String? { get }
-    var settingsActionTitle: String { get }
-    var cancelActionTitle: String { get }
-    
-}
-open class AppSettingsAlertStringsProvider: AppSettingsAlertStringsProviding {
-    
-    public var settingsAlertTitle: String?
-    public var settingsAlertMessage: String?
-    public var settingsActionTitle: String
-    public var cancelActionTitle: String
-    
-    public init(settingsAlertTitle: String? = nil, settingsAlertMessage: String? = nil, settingsActionTitle: String, cancelActionTitle: String) {
-        self.settingsAlertTitle = settingsAlertTitle
-        self.settingsAlertMessage = settingsAlertMessage
-        self.settingsActionTitle = settingsActionTitle
-        self.cancelActionTitle = cancelActionTitle
-    }
-    
-}
-
 public protocol AppSettingsShowing {
     
     var appSettingsShowingInterface: AppSettingsShowingInterface? { get }
