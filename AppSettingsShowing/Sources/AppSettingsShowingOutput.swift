@@ -11,28 +11,49 @@ import Foundation
 import AlertActionBuilder
 import SKAlertControllerShowing
 
-public protocol AppSettingsShowing {
-
-    var appSettingsShowingInterface: AppSettingsShowingInterface? { get }
+public protocol AppSettingsAlertStringsProviding {
     
-    var settingsActionTitle: String? { get }
-    var cancelActionTitle: String? { get }
     var settingsAlertTitle: String? { get }
     var settingsAlertMessage: String? { get }
+    var settingsActionTitle: String { get }
+    var cancelActionTitle: String { get }
     
-    func showAppSettingsAlert(alertPresentingCompletion: (() -> Void)?, appSettingsShowingCompletion: ((Bool) -> Void)?)
+}
+open class AppSettingsAlertStringsProvider: AppSettingsAlertStringsProviding {
+    
+    public var settingsAlertTitle: String?
+    public var settingsAlertMessage: String?
+    public var settingsActionTitle: String
+    public var cancelActionTitle: String
+    
+    public init(settingsAlertTitle: String? = nil, settingsAlertMessage: String? = nil, settingsActionTitle: String, cancelActionTitle: String) {
+        self.settingsAlertTitle = settingsAlertTitle
+        self.settingsAlertMessage = settingsAlertMessage
+        self.settingsActionTitle = settingsActionTitle
+        self.cancelActionTitle = cancelActionTitle
+    }
+    
+}
+
+public protocol AppSettingsShowing {
+    
+    var appSettingsShowingInterface: AppSettingsShowingInterface? { get }
+
+    func showAppSettingsAlert(with stringsProvider: AppSettingsAlertStringsProviding, alertPresentingCompletion: (() -> Void)?,
+                              appSettingsShowingCompletion: ((Bool) -> Void)?)
     
 }
 
 public extension AppSettingsShowing where Self: NSObject {
-
-    func showAppSettingsAlert(alertPresentingCompletion: (() -> Void)? = nil, appSettingsShowingCompletion: ((Bool) -> Void)? = nil) {
-        let settingsActionConfig = AlertActionConfig(title: settingsActionTitle,
+    
+    func showAppSettingsAlert(with stringsProvider: AppSettingsAlertStringsProviding, alertPresentingCompletion: (() -> Void)? = nil,
+                              appSettingsShowingCompletion: ((Bool) -> Void)? = nil) {
+        let settingsActionConfig = AlertActionConfig(title: stringsProvider.settingsActionTitle,
                                                      style: .default) { [weak self] (_) in
-            self?.appSettingsShowingInterface?.showAppSettings(completion: appSettingsShowingCompletion)
+                                                        self?.appSettingsShowingInterface?.showAppSettings(completion: appSettingsShowingCompletion)
         }
-        let cancelActionConfig = AlertActionConfig(title: cancelActionTitle, style: .cancel)
-        appSettingsShowingInterface?.showAlertController(with: settingsAlertTitle, message: settingsAlertMessage,
+        let cancelActionConfig = AlertActionConfig(title: stringsProvider.cancelActionTitle, style: .cancel)
+        appSettingsShowingInterface?.showAlertController(with: stringsProvider.settingsAlertTitle, message: stringsProvider.settingsAlertMessage,
                                                          actionsConfiguration: [settingsActionConfig, cancelActionConfig],
                                                          preferredStyle: .alert, completion: alertPresentingCompletion)
     }
