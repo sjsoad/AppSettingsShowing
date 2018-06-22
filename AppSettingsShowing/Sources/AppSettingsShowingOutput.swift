@@ -30,8 +30,9 @@ public extension AppSettingsShowing where Self: NSObject {
         }
         let cancelActionConfig = AlertActionConfig(title: stringsProvider.cancelActionTitle, style: .cancel)
         appSettingsShowingInterface?.showAlertController(with: stringsProvider.settingsAlertTitle, message: stringsProvider.settingsAlertMessage,
-                                                         actionsConfiguration: [settingsActionConfig, cancelActionConfig],
-                                                         preferredStyle: .alert, completion: alertPresentingCompletion)
+                                                         actionsConfiguration: [settingsActionConfig, cancelActionConfig], preferredStyle: .alert,
+                                                         completion: alertPresentingCompletion,
+                                                         popoveConfigurationHandler: nil)
     }
     
 }
