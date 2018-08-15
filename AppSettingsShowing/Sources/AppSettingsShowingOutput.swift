@@ -31,8 +31,7 @@ public extension AppSettingsShowing {
         let cancelActionConfig = AlertActionConfig(title: stringsProvider.cancelActionTitle, style: .cancel)
         appSettingsShowingInterface?.showAlertController(with: stringsProvider.settingsAlertTitle, message: stringsProvider.settingsAlertMessage,
                                                          actionsConfiguration: [settingsActionConfig, cancelActionConfig], preferredStyle: .alert,
-                                                         completion: alertPresentingCompletion,
-                                                         popoveConfigurationHandler: nil)
+                                                         completion: alertPresentingCompletion)
     }
     
 }
