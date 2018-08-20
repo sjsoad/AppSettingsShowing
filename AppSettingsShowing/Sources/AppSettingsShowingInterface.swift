@@ -19,18 +19,17 @@ public protocol AppSettingsShowingInterface: AlertControllerShowingInterface {
 public extension AppSettingsShowingInterface {
 
     func showAppSettings(completion: ((Bool) -> Void)? = nil) {
-        guard let settingsAppURL = settingsAppURL, UIApplication.shared.canOpenURL(settingsAppURL) else {
+        guard let myAppSettingsURL = myAppSettingsURL, UIApplication.shared.canOpenURL(myAppSettingsURL) else {
             completion?(false)
             return }
-        UIApplication.shared.open(settingsAppURL, options: [:], completionHandler: completion)
+        UIApplication.shared.open(myAppSettingsURL, options: [:], completionHandler: completion)
     }
     
     // MARK: - Private -
     
-    private var settingsAppURL: URL? {
-        guard let bundleString = Bundle.main.bundleIdentifier,
-            let settingsAppURL = URL(string: UIApplicationOpenSettingsURLString + bundleString) else { return nil }
-        return settingsAppURL
+    private var myAppSettingsURL: URL? {
+        let urlString = [UIApplicationOpenSettingsURLString, Bundle.main.bundleIdentifier].compactMap({ $0 }).joined()
+        return URL(string: urlString)
     }
     
 }
