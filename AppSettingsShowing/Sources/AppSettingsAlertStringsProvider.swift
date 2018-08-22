@@ -18,10 +18,10 @@ public protocol AppSettingsAlertStringsProviding {
 }
 open class AppSettingsAlertStringsProvider: AppSettingsAlertStringsProviding {
     
-    public private(set) var settingsAlertTitle: String?
-    public private(set) var settingsAlertMessage: String?
-    public private(set) var settingsActionTitle: String
-    public private(set) var cancelActionTitle: String
+    public let settingsAlertTitle: String?
+    public let settingsAlertMessage: String?
+    public let settingsActionTitle: String
+    public let cancelActionTitle: String
     
     public init(settingsAlertTitle: String? = nil, settingsAlertMessage: String? = nil, settingsActionTitle: String, cancelActionTitle: String) {
         self.settingsAlertTitle = settingsAlertTitle
