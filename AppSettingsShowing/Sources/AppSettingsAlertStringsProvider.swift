@@ -16,7 +16,8 @@ public protocol AppSettingsAlertStringsProviding {
     var cancelActionTitle: String { get }
     
 }
-open class AppSettingsAlertStringsProvider: AppSettingsAlertStringsProviding {
+
+public struct AppSettingsAlertStringsProvider: AppSettingsAlertStringsProviding {
     
     public let settingsAlertTitle: String?
     public let settingsAlertMessage: String?
