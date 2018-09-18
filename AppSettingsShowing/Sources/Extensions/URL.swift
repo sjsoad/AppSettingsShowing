@@ -9,7 +9,6 @@ import Foundation
 
 extension URL {
     
-    
     static var appSettings: URL? {
         #if swift(>=4.2)
         let urlString = [UIApplication.openSettingsURLString, Bundle.main.bundleIdentifier].compactMap({ $0 }).joined()
