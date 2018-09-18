@@ -19,22 +19,11 @@ public protocol AppSettingsShowingInterface: AlertControllerShowingInterface {
 public extension AppSettingsShowingInterface {
 
     func showAppSettings(completion: ((Bool) -> Void)? = nil) {
-        guard let myAppSettingsURL = myAppSettingsURL, UIApplication.shared.canOpenURL(myAppSettingsURL) else {
+        guard let myAppSettingsURL = URL.appSettings, UIApplication.shared.canOpenURL(myAppSettingsURL) else {
             completion?(false)
             return }
-        UIApplication.shared.open(myAppSettingsURL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: completion)
+        let options: [UIApplication.OpenExternalURLOptionsKey: Any] = [:]
+        UIApplication.shared.open(myAppSettingsURL, options: options, completionHandler: completion)
     }
     
-    // MARK: - Private -
-    
-    private var myAppSettingsURL: URL? {
-        let urlString = [UIApplication.openSettingsURLString, Bundle.main.bundleIdentifier].compactMap({ $0 }).joined()
-        return URL(string: urlString)
-    }
-    
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
