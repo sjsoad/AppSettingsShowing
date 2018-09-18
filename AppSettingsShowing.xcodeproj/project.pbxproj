@@ -11,6 +11,7 @@
 		A595D21220C02C7800330556 /* AppSettingsShowingOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595D21020C02C7800330556 /* AppSettingsShowingOutput.swift */; };
 		A595D21320C02C7800330556 /* AppSettingsShowingInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595D21120C02C7800330556 /* AppSettingsShowingInterface.swift */; };
 		A595D21520C02C8900330556 /* AppSettingsAlertStringsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A595D21420C02C8900330556 /* AppSettingsAlertStringsProvider.swift */; };
+		A59FB80F2150FE93002789CD /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59FB80E2150FE93002789CD /* URL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		A595D21020C02C7800330556 /* AppSettingsShowingOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsShowingOutput.swift; sourceTree = "<group>"; };
 		A595D21120C02C7800330556 /* AppSettingsShowingInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettingsShowingInterface.swift; sourceTree = "<group>"; };
 		A595D21420C02C8900330556 /* AppSettingsAlertStringsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsAlertStringsProvider.swift; sourceTree = "<group>"; };
+		A59FB80E2150FE93002789CD /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +72,20 @@
 		A5799B572094449100C0EE61 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A59FB80D2150FE93002789CD /* Extensions */,
 				A595D21120C02C7800330556 /* AppSettingsShowingInterface.swift */,
 				A595D21020C02C7800330556 /* AppSettingsShowingOutput.swift */,
 				A595D21420C02C8900330556 /* AppSettingsAlertStringsProvider.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		A59FB80D2150FE93002789CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A59FB80E2150FE93002789CD /* URL.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +170,7 @@
 				A595D21220C02C7800330556 /* AppSettingsShowingOutput.swift in Sources */,
 				A595D21520C02C8900330556 /* AppSettingsAlertStringsProvider.swift in Sources */,
 				A595D21320C02C7800330556 /* AppSettingsShowingInterface.swift in Sources */,
+				A59FB80F2150FE93002789CD /* URL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

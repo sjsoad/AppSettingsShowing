@@ -22,8 +22,7 @@ public extension AppSettingsShowingInterface {
         guard let myAppSettingsURL = URL.appSettings, UIApplication.shared.canOpenURL(myAppSettingsURL) else {
             completion?(false)
             return }
-        let options: [UIApplication.OpenExternalURLOptionsKey: Any] = [:]
-        UIApplication.shared.open(myAppSettingsURL, options: options, completionHandler: completion)
+        UIApplication.shared.open(myAppSettingsURL, completionHandler: completion)
     }
     
 }
