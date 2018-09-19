@@ -2,14 +2,14 @@ Pod::Spec.new do |s|
 
 # 1
 s.platform = :ios
-s.swift_version = '4.0'
+s.swift_version = '4.2'
 s.ios.deployment_target = '10.0'
 s.name = "SKAppSettingsShowing"
 s.summary = "AppSettingsShowing extennds object and allow you to show app settings alert"
 s.requires_arc = true
 
 # 2
-s.version = "0.1.5"
+s.version = "0.1.6"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
